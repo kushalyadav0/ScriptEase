@@ -1,0 +1,12 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/apt-packages:1": {
+			"clean_ppas": true,
+			"preserve_apt_list": true,
+			"force_ppas_on_non_ubuntu": true,
+			"packages": "htop",
+			"ppas": "ppa:deadsnakes/ppa"
+		}
+	}
+}
