@@ -1,0 +1,42 @@
+# General
+.DS_Store
+*.log
+*.pyc
+*.pyo
+*.swp
+.env
+.vscode/
+.idea/
+node_modules/
+__pycache__/
+
+# Backend (Django)
+db.sqlite3
+*.pyc
+*.pyo
+migrations/*   # Ignore migrations except __init__.py
+!migrations/__init__.py
+venv/
+.env
+settings.py    # If using environment variables, else keep it
+
+# Frontend (React)
+node_modules/
+build/
+dist/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+coverage/
+
+# Python Virtual Environment
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore AI API keys (if stored in a separate file)
+ai_keys.json
+
+# Ignore IDE-specific files
+*.sublime-workspace
+*.sublime-project
