@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # by me 
+# to make gunicorn serve static files
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
 ]
+urlpatterns += staticfiles_urlpatterns()

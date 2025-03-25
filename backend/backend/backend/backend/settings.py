@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6vjvxy2ffn3^4*wba#h$66*2ih^_f2p4i#e-!yw#-ma0!2dx%1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localost','127.0.0.1',] # list of the server's addresses or domain names that may be used to connect to the Django instnce.
+ALLOWED_HOSTS = ['localhost','127.0.0.1'] # list of the server's addresses or domain names that may be used to connect to the Django instnce.
 
 
 # Application definition
@@ -41,12 +41,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',# whitenoise for serving static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -129,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # BY ME
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+# for ewrving static fles using whitenoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
